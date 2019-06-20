@@ -1,12 +1,115 @@
 @import "utils";
 // SETUP ENV
+
+/* SCROLL BAR/
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  transition: 0.3s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  transition: 0.3s;
+  background: lightgray;
+  opacity: 0.3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $grey;
+}
+
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin:     0;
+  padding:    0;
 }
 body{
-  background-color: $white-dark;
   @extend .font-common;
   @extend .font-size-normal;
+  background-color: $white;
+  text-align:       center;
+}
+
+#main{
+  height:                 100vh;
+  width:                  100%;
+  background-color:       $white;
+  margin:                 auto;
+  display:                grid;
+  grid-template-columns:  auto;
+  grid-template-rows:     $size-large auto $size-super;
+  grid-template-areas:    "header" "content" "footer";
+}
+
+#header{
+  display:                grid;
+  grid-area:              header;
+  grid-template-columns:  auto 1fr auto;
+  grid-template-areas:    "header-logo" "header-menu" "header-tool";
+  color:                  $blue;
+}
+
+#header-logo{
+  @extend .text-shadow;
+  font-size:    $size-medium;
+  font-weight:  bold;
+  line-height:  $size-large;
+  grid-area:    header-logo;
+  padding:      0 $size-normal;
+}
+
+#content{
+  max-width:        1200px;
+  display:          flex;
+  flex-wrap:        wrap;
+  justify-content:  center;
+  margin:           auto auto $size-large;
+}
+
+#footer{
+  grid-area:        footer;
+  width:            100%;
+  background-color: $blue;
+  color:            $white-dark;
+}
+
+.card{
+  @extend .box-shadow;
+  position:       relative;
+  display:        inline-block;
+  width:          384px;
+  overflow:       hidden;
+  border-radius:  $size-tiny;
+  transition:     0.2s;
+  cursor:         pointer;
+  margin:         $size-small;
+}
+
+.card:hover{
+  transform: scale(1.05);
+}
+
+.card-img{
+  height:           216px;
+  width:            100%;
+  background-color: $blue;
+}
+
+.card-content{
+  text-align: left;
+  padding:    $size-smaller $size-small;
+}
+
+.card-content p{
+  @extend .font-size-smaller;
+  color: $grey;
 }

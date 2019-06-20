@@ -1,25 +1,29 @@
 //  Size
-$size-super:  128px;
-$size-large:  64px;
-$size-medium: 32px;
-$size-normal: 16px;
-$size-small:  8px;
-$size-tiny:   4px;
+$size-super:    128px;
+$size-large:    64px;
+$size-medium:   32px;
+$size-normal:   16px;
+$size-smaller:  12px;
+$size-small:    8px;
+$size-tiny:     4px;
 
 //  Color
-$black-light:   rgb(16, 16, 16);
-$black-normal:  rgb(8, 8, 8);
-$black-dark:    rgb(0, 0, 0);
+$black:       rgb(8, 8, 8);
+$black-light: rgb(16, 16, 16);
+$black-dark:  rgb(0, 0, 0);
 
-$white-light:   rgb(255,255,255);
-$white-normal:  rgb(225,225,225);
-$white-dark:    rgb(205,205,205);
+$grey:        rgb(99, 110, 114);
 
-$red-light:     rgb(255, 87, 89);
-$red-normal:    rgb(214, 48, 50);
-$red-dark:      rgb(112, 24, 25);
+$white:       rgb(255,255,255);
+$white-dark:  rgb(235,235,235);
 
-$green-normal:  rgb(0, 184, 148);
+$red:         rgb(214, 48, 50);
+$red-light:   rgb(255, 87, 89);
+$red-dark:    rgb(112, 24, 25);
+
+$green:       rgb(0, 184, 148);
+
+$blue:        rgb(9, 132, 227);
 
 //  Font
 .font-common{
@@ -34,11 +38,22 @@ $green-normal:  rgb(0, 184, 148);
 .font-size-normal{
   font-size: $size-normal;
 }
+.font-size-smaller{
+  font-size: $size-smaller;
+}
 .font-size-small{
   font-size: $size-small;
 }
 .font-color-normal{
-  color: $black-normal;
+  color: $black;
+}
+
+//  Shadow
+.box-shadow{
+  box-shadow: 0 0 5px 0 $grey;
+}
+.text-shadow{
+  text-shadow: 0 0 1px;
 }
 
 

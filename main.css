@@ -14,12 +14,50 @@
   font-size: 16px;
 }
 
+.font-size-smaller, .card-content p {
+  font-size: 12px;
+}
+
 .font-size-small {
   font-size: 8px;
 }
 
 .font-color-normal {
   color: #080808;
+}
+
+.box-shadow, .card {
+  box-shadow: 0 0 5px 0 #636e72;
+}
+
+.text-shadow, #header-logo {
+  text-shadow: 0 0 1px;
+}
+
+/* SCROLL BAR/
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  transition: 0.3s;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  transition: 0.3s;
+  background: lightgray;
+  opacity: 0.3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #636e72;
 }
 
 * {
@@ -29,7 +67,80 @@
 }
 
 body {
-  background-color: #cdcdcd;
+  background-color: white;
+  text-align: center;
+}
+
+#main {
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 64px auto 128px;
+  grid-template-areas: "header" "content" "footer";
+}
+
+#header {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "header-logo" "header-menu" "header-tool";
+  color: #0984e3;
+}
+
+#header-logo {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 64px;
+  grid-area: header-logo;
+  padding: 0 16px;
+}
+
+#content {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto auto 64px;
+}
+
+#footer {
+  grid-area: footer;
+  width: 100%;
+  background-color: #0984e3;
+  color: #ebebeb;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  width: 384px;
+  overflow: hidden;
+  border-radius: 4px;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-img {
+  height: 216px;
+  width: 100%;
+  background-color: #0984e3;
+}
+
+.card-content {
+  text-align: left;
+  padding: 12px 8px;
+}
+
+.card-content p {
+  color: #636e72;
 }
 
 .font-common, body {
@@ -48,12 +159,24 @@ body {
   font-size: 16px;
 }
 
+.font-size-smaller, .card-content p {
+  font-size: 12px;
+}
+
 .font-size-small {
   font-size: 8px;
 }
 
 .font-color-normal {
   color: #080808;
+}
+
+.box-shadow, .card {
+  box-shadow: 0 0 5px 0 #636e72;
+}
+
+.text-shadow, #header-logo {
+  text-shadow: 0 0 1px;
 }
 
 /*# sourceMappingURL=main.css.map */
