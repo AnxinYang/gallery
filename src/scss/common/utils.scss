@@ -1,0 +1,44 @@
+//  Size
+$size-super:  128px;
+$size-large:  64px;
+$size-medium: 32px;
+$size-normal: 16px;
+$size-small:  8px;
+$size-tiny:   4px;
+
+//  Color
+$black-light:   rgb(16, 16, 16);
+$black-normal:  rgb(8, 8, 8);
+$black-dark:    rgb(0, 0, 0);
+
+$white-light:   rgb(255,255,255);
+$white-normal:  rgb(225,225,225);
+$white-dark:    rgb(205,205,205);
+
+$red-light:     rgb(255, 87, 89);
+$red-normal:    rgb(214, 48, 50);
+$red-dark:      rgb(112, 24, 25);
+
+$green-normal:  rgb(0, 184, 148);
+
+//  Font
+.font-common{
+  font-family: Arial;
+}
+.font-size-large{
+  font-size: $size-large;
+}
+.font-size-medium{
+  font-size: $size-medium;
+}
+.font-size-normal{
+  font-size: $size-normal;
+}
+.font-size-small{
+  font-size: $size-small;
+}
+.font-color-normal{
+  color: $black-normal;
+}
+
+
