@@ -5,6 +5,7 @@ function index() {
     index.header();
     index.content();
     index.footer();
+    //index.iFrame();
 }
 
 
@@ -33,7 +34,8 @@ index.content = function () {
     for(let i=0;i<10;i++) {
         content.addElement(index.card({
             title: 'Test',
-            description: 'A Sample description.'
+            description: 'A Sample description.',
+            url: 'https://anxinyang.github.io/ccJS'
         }));
     }
 };
@@ -43,8 +45,11 @@ index.footer = function () {
 };
 
 index.card = function(params = {}){
-    let {title, description} = params;
-    let container = cc.createElement('div').addClass('card');
+    let {title, description, url} = params;
+    let container = cc.createElement('div').addClass('card')
+        .on('click', function () {
+            window.open(url);
+        });
     container.add('div').addClass('card-img');
 
     let content = container.add('div').addClass('card-content');
@@ -52,6 +57,13 @@ index.card = function(params = {}){
     content.add('p').content(description);
 
     return container;
+};
+
+index.iFrame = function () {
+    let root = cc.select('#body');
+    let mainContainer = cc.createElement('div', 'iFrame')
+        .addClass('iFrame');
+    root.appendChild(mainContainer);
 };
 
 index();
