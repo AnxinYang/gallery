@@ -77,9 +77,11 @@ body{
 
 #footer{
   grid-area:        footer;
+  position:         relative;
   width:            100%;
   background-color: $blue;
   color:            $white-dark;
+  overflow:         hidden;
 }
 
 #iFrame{

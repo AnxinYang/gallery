@@ -23,9 +23,9 @@
   "dependencies": {
     "d3": "^5.7.0",
     "d3-time-format": "^2.1.1",
-    "webpack": "^4.3.0",
-    "webpack-dev-server": "^3.1.1",
-    "npm-ccjs-ay": "^1.0.4"
+    "npm-ccjs-ay": "^1.0.7",
+    "webpack": "^4.35.0",
+    "webpack-dev-server": "^3.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -43,7 +43,7 @@
     "less-loader": "^4.1.0",
     "proxy-middleware": "^0.15.0",
     "style-loader": "^0.20.3",
-    "webpack-cli": "^3.1.2",
+    "webpack-cli": "^3.3.4",
     "webpack-dev-middleware": "^3.1.0",
     "webpack-hot-middleware": "^2.21.2"
   }

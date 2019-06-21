@@ -1,5 +1,7 @@
 import cc from 'npm-ccjs-ay';
+import * as d3 from "d3";
 import demos from './demos';
+
 function index() {
     index.env();
     index.root();
@@ -38,8 +40,51 @@ index.content = function () {
 };
 
 index.footer = function () {
-    let footer = cc.select('#main').add('div', 'footer')
-        .content('Winter is Coming..');
+    let footer = cc.select('#main').add('div', 'footer');
+    footer.addNS('svg', 'svg')
+        .attr('width', '100%')
+        .attr('height', '100%')
+        .css({
+            position: 'absolute',
+            top: 0,
+            left: 0,
+        });
+
+    let svg = d3.select('#svg');
+    let lineGenerator = d3.area()
+        .curve(d3.curveCardinal);
+    let counter = 0;
+    let repeat = function (path) {
+        path
+            .transition()
+            .ease(d3.easeLinear)
+            .duration(3000)
+            .attr('d', pathData)
+            .on("end", function () {
+                counter++;
+                if(counter===100)counter=0;
+                repeat(path)
+            });
+    };
+
+    function pathData() {
+        let numberOfPoints = 5;
+        let pointPadding = window.innerWidth / numberOfPoints;
+        let points = [];
+        for (let i = -1; i < numberOfPoints + 1; i++) {
+            //points.push([pointPadding*i, (height/2)+ Math.random()*100])
+            points.push([pointPadding * i, Math.sin(i-counter)*20 + Math.random()*10+15])
+        }
+        return lineGenerator(points);
+    }
+
+    let path = svg.append('path')
+        .attr('d', pathData)
+        .attr('fill', 'white')
+        //.attr('stroke', 'rgba(0, 99, 204, '+ (1-(0.1*i)) +')')
+        .attr('stroke', 'white');
+    repeat(path)
+
 };
 
 index.card = function(params = {}){

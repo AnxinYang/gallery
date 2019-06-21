@@ -109,9 +109,11 @@ body {
 
 #footer {
   grid-area: footer;
+  position: relative;
   width: 100%;
   background-color: #0984e3;
   color: #ebebeb;
+  overflow: hidden;
 }
 
 #iFrame {
