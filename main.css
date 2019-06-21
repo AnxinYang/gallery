@@ -27,7 +27,11 @@
 }
 
 .box-shadow, .card {
-  box-shadow: 0 0 5px 0 #636e72;
+  box-shadow: 0 0 4px 0 #636e72;
+}
+
+.box-shadow-higher, .card:hover {
+  box-shadow: 0 0 8px 0 #636e72;
 }
 
 .text-shadow, #header-logo {
@@ -100,9 +104,6 @@ body {
 
 #content {
   max-width: 1200px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   margin: 64px auto;
 }
 
@@ -132,16 +133,19 @@ body {
   transition: 0.2s;
   cursor: pointer;
   margin: 8px;
+  background-color: white;
 }
 
 .card:hover {
   transform: scale(1.05);
+  filter: brightness(90%);
 }
 
 .card-img {
   height: 216px;
   width: 100%;
   background-color: #0984e3;
+  background-size: contain;
 }
 
 .card-content {
@@ -182,7 +186,11 @@ body {
 }
 
 .box-shadow, .card {
-  box-shadow: 0 0 5px 0 #636e72;
+  box-shadow: 0 0 4px 0 #636e72;
+}
+
+.box-shadow-higher, .card:hover {
+  box-shadow: 0 0 8px 0 #636e72;
 }
 
 .text-shadow, #header-logo {

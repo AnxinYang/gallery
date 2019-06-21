@@ -1,4 +1,5 @@
 import cc from 'npm-ccjs-ay';
+import demos from './demos';
 function index() {
     index.env();
     index.root();
@@ -31,30 +32,40 @@ index.header = function () {
 
 index.content = function () {
     let content = cc.select('#main').add('div', 'content');
-    for(let i=0;i<10;i++) {
-        content.addElement(index.card({
-            title: 'Test',
-            description: 'A Sample description.',
-            url: 'https://anxinyang.github.io/ccJS'
-        }));
-    }
+    demos.forEach(function (demo) {
+        content.addElement(index.card(demo));
+    });
 };
 
 index.footer = function () {
-    let footer = cc.select('#main').add('div', 'footer');
+    let footer = cc.select('#main').add('div', 'footer')
+        .content('Winter is Coming..');
 };
 
 index.card = function(params = {}){
-    let {title, description, url} = params;
+    let {title, description, url, img, color} = params;
     let container = cc.createElement('div').addClass('card')
         .on('click', function () {
             window.open(url);
         });
-    container.add('div').addClass('card-img');
+    container.add('div').addClass('card-img')
+        .css({
+            backgroundImage: `url(${img})`,
+        });
 
     let content = container.add('div').addClass('card-content');
     content.add('strong').content(title);
-    content.add('p').content(description);
+    let p = content.add('p').content(description);
+
+    if(color){
+        content .css({
+            backgroundColor: color,
+            color: 'white'
+        });
+        p.css({
+            color: 'white'
+        })
+    }
 
     return container;
 };

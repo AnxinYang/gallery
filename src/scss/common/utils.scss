@@ -50,7 +50,10 @@ $blue:        rgb(9, 132, 227);
 
 //  Shadow
 .box-shadow{
-  box-shadow: 0 0 5px 0 $grey;
+  box-shadow: 0 0 $size-tiny 0 $grey;
+}
+.box-shadow-higher{
+  box-shadow: 0 0 $size-small 0 $grey;
 }
 .text-shadow{
   text-shadow: 0 0 1px;
