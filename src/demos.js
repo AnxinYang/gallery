@@ -4,7 +4,27 @@ const demos = [
         title: `Let's make data alive!`,
         url: 'https://anxinyang.github.io/ccJS',
         img: './img/ccJS.png',
-        color: 'rgba(255, 0, 80, 1)'
+        color: 'rgba(255, 0, 80, 1)',
+    },
+    {
+        description: 'Coming Soon',
+        title: `Coming Soon`,
+    },
+    {
+        description: 'Coming Soon',
+        title: `Coming Soon`,
+    },
+    {
+        description: 'Coming Soon',
+        title: `Coming Soon`,
+    },
+    {
+        description: 'Coming Soon',
+        title: `Coming Soon`,
+    },
+    {
+        description: 'Coming Soon',
+        title: `Coming Soon`,
     },
 ];
 

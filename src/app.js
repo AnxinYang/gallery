@@ -43,27 +43,33 @@ index.footer = function () {
 };
 
 index.card = function(params = {}){
-    let {title, description, url, img, color} = params;
+    let {title, description, url, img, color, fontColor} = params;
     let container = cc.createElement('div').addClass('card')
         .on('click', function () {
             window.open(url);
         });
-    container.add('div').addClass('card-img')
+
+
+    let image = container.add('div').addClass('card-img')
         .css({
             backgroundImage: `url(${img})`,
         });
+    if(!img){
+        image.add('i').addClass('fas').addClass('fa-exclamation-triangle');
+    }
 
     let content = container.add('div').addClass('card-content');
     content.add('strong').content(title);
+
     let p = content.add('p').content(description);
 
     if(color){
         content .css({
             backgroundColor: color,
-            color: 'white'
+            color: fontColor || 'white'
         });
         p.css({
-            color: 'white'
+            color: fontColor || 'white'
         })
     }
 

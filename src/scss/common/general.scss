@@ -99,7 +99,7 @@ body{
   width:            384px;
   overflow:         hidden;
   border-radius:    $size-tiny;
-  transition:       0.2s;
+  transition:       1s;
   cursor:           pointer;
   margin:           $size-small;
   background-color: $white;
@@ -116,6 +116,13 @@ body{
   width:            100%;
   background-color: $blue;
   background-size:  contain;
+}
+
+.card-img i{
+  font-size: 128px;
+  color: white;
+  opacity: 0.5;
+  line-height: 200px;
 }
 
 .card-content{

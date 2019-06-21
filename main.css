@@ -130,7 +130,7 @@ body {
   width: 384px;
   overflow: hidden;
   border-radius: 4px;
-  transition: 0.2s;
+  transition: 1s;
   cursor: pointer;
   margin: 8px;
   background-color: white;
@@ -146,6 +146,13 @@ body {
   width: 100%;
   background-color: #0984e3;
   background-size: contain;
+}
+
+.card-img i {
+  font-size: 128px;
+  color: white;
+  opacity: 0.5;
+  line-height: 200px;
 }
 
 .card-content {
