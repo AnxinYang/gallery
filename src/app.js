@@ -58,7 +58,7 @@ index.footer = function () {
         path
             .transition()
             .ease(d3.easeLinear)
-            .duration(3000)
+            .duration(2000)
             .attr('d', pathData)
             .on("end", function () {
                 counter++;
@@ -73,7 +73,7 @@ index.footer = function () {
         let points = [];
         for (let i = -1; i < numberOfPoints + 1; i++) {
             //points.push([pointPadding*i, (height/2)+ Math.random()*100])
-            points.push([pointPadding * i, Math.sin(i-counter)*20 + Math.random()*10+15])
+            points.push([pointPadding * i, Math.abs(Math.sin(i - counter)) * 20 + Math.random() * 15])
         }
         return lineGenerator(points);
     }
@@ -81,10 +81,8 @@ index.footer = function () {
     let path = svg.append('path')
         .attr('d', pathData)
         .attr('fill', 'white')
-        //.attr('stroke', 'rgba(0, 99, 204, '+ (1-(0.1*i)) +')')
         .attr('stroke', 'white');
-    repeat(path)
-
+    repeat(path);
 };
 
 index.card = function(params = {}){
